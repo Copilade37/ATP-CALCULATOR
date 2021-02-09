@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<title>ATP Calculator</title>
+<style>
+	html, body {
+		height: 100%;
+	}
+	
+	body {
+		margin: 0px;
+		padding: 0px;
+		background: #333333;
+		font-family: 'Muli', sans-serif;
+		font-size: 12pt;
+		font-weight: 300;
+		color: #363636;
+	}
+	
+	h1, h2, h3 {
+		margin: 0;
+		padding: 0;
+	}
+	
+	p, ol, ul {
+		margin-top: 0px;
+	}
+	
+	p {
+		line-height: 190%;
+	}
+	
+	strong {
+	}
+	
+	a {
+		color: #171717;
+	}
+	
+	a:hover {
+		text-decoration: none;
+	}
+	
+	a img {
+		border: none;
+	}
+	
+	/*********************************************************************************/
+	/* List Styles                                                                   */
+	/*********************************************************************************/
+	
+		ul.style1
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		ul.style1 li
+		{
+			border-top: solid 1px #E5E5E5;
+			padding: 0.80em 0;
+		}
+		
+		ul.style1 li:first-child
+		{
+			border-top: 0;
+			padding-top: 0;
+		}
+	
+		ul.style2
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		ul.style2 li
+		{
+			border-top: solid 1px #E5E5E5;
+			padding: 0.80em 0;
+		}
+		
+		ul.style2 li:first-child
+		{
+			border-top: 0;
+			padding-top: 0;
+		}
+	
+	/*********************************************************************************/
+	/* Heading Titles                                                                */
+	/*********************************************************************************/
+	
+		.title
+		{
+			margin-bottom: 2em;
+		}
+	
+		.primary
+		{
+			color: #2a4982;
+			padding-bottom: 15px;
+		}
+	
+		
+		.title .byline
+		{
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 0.90em;
+			color: #6F6F6F;
+		}
+	
+	/** WRAPPER */
+	
+	#wrapper {
+		background: #FFFFFF;
+	}
+	
+	#footer-wrapper
+	{
+		background: #212529;
+	}
+	
+	.container {
+		width: 60%;
+		margin: 0px auto;
+	}
+	
+	.clearfix {
+		clear: both;
+	}
+	
+	/*********************************************************************************/
+	/* Wrappers                                                                      */
+	/*********************************************************************************/
+	
+	#header-wrapper
+	{
+		overflow: hidden;
+		background-size: 100%;
+		background: #333333;
+	}
+	
+	
+	/*********************************************************************************/
+	/* Header                                                                        */
+	/*********************************************************************************/
+	
+		#header 
+		{
+			position: relative;
+			overflow: hidden;
+			text-align: center;
+		}
+	
+	/*********************************************************************************/
+	/* Logo                                                                          */
+	/*********************************************************************************/
+	
+		#logo 
+		{
+			width: 500px;
+			height: 100px;
+			margin: 0 auto;
+			padding: 2em 0em;
+			text-transform: uppercase;
+		}
+		
+		#logo h1
+		{
+			letter-spacing: 0.10em;
+			font-size: 3em;
+		}
+		
+		#logo p 
+		{
+			letter-spacing: 0.10em;
+			color: #FFF;
+		}
+		
+		#logo a 
+		{
+			text-decoration: none;
+			color: #FFF;
+		}
+	
+	/** MENU */
+	
+	#menu-wrapper
+	{
+		background: rgba(42, 73, 130, 1);
+	}
+	
+	#menu {
+		overflow: hidden;
+		height: 100px;
+	}
+	
+	#menu ul {
+		margin: 0;
+		padding: 25px 0px 0px 0px;
+		list-style: none;
+		line-height: normal;
+		text-align: center;
+	}
+	
+	#menu li {
+		display: inline-block;
+	}
+	
+	#menu a {
+		display: block;
+		letter-spacing: 1px;
+		padding: 20px 40px;
+		text-decoration: none;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 0.80em;
+		font-weight: 600;
+		border: none;
+		color: #FFF;
+	}
+	
+	#menu a:hover, #menu .current_page_item a {
+		text-decoration: none;
+	}
+	
+	#menu .current_page_item a {
+		background: rgba(0, 0, 0, 0.075);
+	}
+	
+	/** PAGE */
+	.containerpage {
+		width: 60%;
+		margin: 0px auto;
+		background: #FFFFFF;
+	}
+	
+	@media only screen and (max-width: 1400px) {
+		.containerpage {
+			width: 90%;
+			background: #FFFFFF;
+		}
+	}
+	
+	#page
+	{
+		position: relative;
+		overflow: hidden;
+		padding: 4em 0em 4em 4em;
+	}
+	
+	/** CONTENT */
+	
+	#content
+	{
+		float: left;
+		width: 65%;
+	}
+	
+	/*********************************************************************************/
+	/* Sidebar                                                                       */
+	/*********************************************************************************/
+	
+		#sidebar
+		{
+			float: right;
+			width: 35%;
+		}
+		
+		#sidebar .title h2
+		{
+			font-size: 1.6em;
+		}
+		
+		#sidebar .box1
+		{
+			margin-bottom: 3em;
+		}
+	
+	/*********************************************************************************/
+	/* Copyright                                                                     */
+	/*********************************************************************************/
+	
+		#copyright
+		{
+			overflow: hidden;
+			padding: 3em 0em;
+			text-align: center;
+		}
+		
+		#copyright p
+		{
+			letter-spacing: 0.20em;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 0.80em;
+			color: #6F6F6F;
+		}
+		
+		#copyright a
+		{
+			text-decoration: none;
+			color: #8C8C8C;
+		}
+	
+	/*********************************************************************************/
+	/* Button Style                                                                  */
+	/*********************************************************************************/
+		.btn
+		{
+			display:inline-block;
+			font-weight:400;
+			color:#212529;
+			text-align:center;
+			vertical-align:middle;
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+			background-color:transparent;
+			border:1px solid transparent;
+			padding:.375rem .75rem;
+			font-size:1rem;
+			line-height:1.5;
+			border-radius:.25rem;
+			transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+		}
+	
+		.btn-success
+		{
+			color:#fff;
+			background-color:#28a745;
+			border-color:#28a745
+		}
+	
+		.btn-success:hover
+		{
+			color:#fff;
+			background-color:#218838;
+			border-color:#1e7e34
+		}
+	
+		.btn-success.focus,.btn-success:focus
+		{
+			color:#fff;
+			background-color:#218838;
+			border-color:#1e7e34;
+			box-shadow:0 0 0 .2rem rgba(72,180,97,.5)
+		}
+	
+		.btn-danger
+		{
+			color:#fff;
+			background-color:#dc3545;
+			border-color:#dc3545
+		}
+	
+		.btn-danger:hover
+		{
+			color:#fff;
+			background-color:#c82333;
+			border-color:#bd2130
+		}
+	
+		.btn-danger.focus,.btn-danger:focus
+		{
+			color:#fff;
+			background-color:#c82333;
+			border-color:#bd2130;
+			box-shadow:0 0 0 .2rem rgba(225,83,97,.5)
+		}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="#">ATP&nbsp;Calculator</a></h1>
+				<p>Designed specifically for <a href="https://ivao.aero/" rel="nofollow">IVAO's</a> ATP exam</p>
+			</div>
+		</div>
+	</div>
+	<div id="menu-wrapper">
+		<div id="menu" class="container">
+			<ul>
+				<li><abbr title="linear interpolation"><a href="#lerp">LERP</a><abbr/></li>
+				<li><a href="#acn">ACN</a></li>
+				<li><a href="#rld">RLD</a></li>
+				<li><abbr title="Flight Computer"><a href="https://e6bx.com/e6b/" target="_blank" rel="no follow">E6B</a></abbr></li>
+			</ul>
+		</div>
+		<!-- end #menu --> 
+	</div>
+	<div id="page" class="containerpage">
+		<div id="content">
+			<div class="title">
+				<h2 class="primary" id="lerp">► Linear Interpolation</h2>
+				<span class="byline">This is useful for many FCOM calculations</span> </div>
+				<img src="https://cdn.discordapp.com/attachments/737874222277197864/778359661656539156/formula.png" style="width: 435px;"></img>
+
+			<table>
+				<tr>
+					<td><center><b style="color: rgba(42, 73, 130, 1);">Xlow<b></center></td>
+					<td><input id="xl"/></td>
+					<td><input id="fl"/></td>
+				</tr>
+				<tr>
+					<td><center><b style="color: rgba(255, 69, 0, 1);">X<b></center></td>
+					<td style="background-color: rgba(42, 73, 130, 1);"><input id="fx"/></td>
+					<td><input disabled id="fr"/></td>
+				</tr>
+				<tr>
+					<td><center><b style="color: rgba(42, 73, 130, 1);">Xhigh<b></center></td>
+					<td><input id="xh"/></td>
+					<td><input id="fh"/></td>
+				</tr>
+				<tr style="text-align: right;">
+					<td></td>
+					<td><button type="button" class="btn btn-danger" onclick="limpalerp();">Clear</button></td>
+					<td><button type="button" class="btn btn-success"  onclick="calcularlerp();">Calculate</button></td>
+				</tr>
+			</table><br/>
+
+			<h2 class="primary">► Bilinear Interpolation</h2>
+			<table>
+				<tr>
+					<td><center><b>☷<b></center></td>
+					<td><input size="10" id="b1"/></td>
+					<td style="background-color: rgba(42, 73, 130, 1);"><input size="10" id="c1"/></td>
+					<td><input size="10" id="d1"/></td>
+				</tr>
+				<tr>
+					<td><input size="10" id="a2"/></td>
+					<td><input size="10" id="b2"/></td>
+					<td style="box-shadow:0 0 0 .1rem rgba(225,83,97,.5);"><input disabled size="10" id="c2"/></td>
+					<td><input size="10" id="d2"/></td>
+				</tr>
+				<tr>
+					<td style="background-color: rgba(42, 73, 130, 1);"><input size="10" id="a3"/></td>
+					<td style="box-shadow:0 0 0 .1rem rgba(225,83,97,.5);"><input disabled size="10" id="b3"/></td>
+					<td style="box-shadow:0 0 0 .1rem rgba(42,73,130,.8);"><input disabled size="10" id="c3"/></td>
+					<td style="box-shadow:0 0 0 .1rem rgba(225,83,97,.5);"><input disabled size="10" id="d3"/></td>
+				</tr>
+				<tr>
+					<td><input size="10" id="a4"/></td>
+					<td><input size="10" id="b4"/></td>
+					<td style="box-shadow:0 0 0 .1rem rgba(225,83,97,.5);"><input disabled size="10" id="c4"/></td>
+					<td><input size="10" id="d4"/></td>
+				</tr>
+				<tr style="text-align: right;">
+					<td></td>
+					<td><button type="button" class="btn btn-danger" onclick="limpadlerp();">Clear</button></td>
+					<td></td>
+					<td><button type="button" class="btn btn-success" onclick="calculardlerp();">Calculate</button></td>
+				</tr>
+			</table><br/>
+
+			<div class="title" id="acn">
+				<h2 class="primary">► ACN Calculator</h2>
+				<span class="byline">Helps you to find out one of the MATOW items</span>
+			</div>
+			<img src="https://cdn.discordapp.com/attachments/737874222277197864/781715868497084426/formulaacn.png" style="width: 435px;"></img>
+			<table>
+				<tr>
+					<td><input id="mtow"/></td>
+					<td><input id="hacn"/></td>
+				</tr>	
+				<tr>
+					<td><input id="agw"/></td>
+					<td><input disabled id="aacn"/></td>
+				</tr>	
+				<tr>
+					<td><input id="dow"/></td>
+					<td><input id="lacn"/></td>
+				</tr>	
+				<tr style="text-align: right;">
+					<td><button type="button" class="btn btn-danger" onclick="limpaacn()">Clear</button></td>
+					<td><button type="button" class="btn btn-success" onclick="calculardaacn();">Calculate</button></td>
+				</tr>	
+			</table>
+			<br/>
+			<h2 class="primary" id="rld">► ALD x RLD</h2>
+			<label for="ald">ALD</label> <input name="ald" id="ald" size="10"> To <select id="fac">
+				<option value="1.67">FAA/JAR DRY 1.67</option>
+				<option value="1.92">FAA/JAR WET 1.92</option>
+				<option value="1.92">CAA DRY/WET 1.92</option>
+			<select> <button type="button" class="btn-success" onclick="calcularald();">Calculate</button> <input disabled id="rld" size="10"/>
+			<div id="resrld">
+				
+			</div>
+
+
+</div>
+		<div id="sidebar">
+			<div class="box2">
+				<div class="title">
+					<h3>Memory ▼</h3>
+				</div>
+				<ul class="style2" id="historico">
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div id="copyright" class="container">
+	<p>Developed by Natan Halberstadt Fonseca - <a href="https://www.ivao.aero/Member.aspx?ID=496402">496402</a>  | Colors by <a href="https://brand.ivao.aero/">IVAO Colors</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+<script>
+
+function colocarNoHistorico(valor) {
+    var ul = document.getElementById("historico");
+    var li = document.createElement("li");
+    li.innerText = valor;
+    ul.prepend(li);
+}
+
+function calcularald() {
+    const ald = parseFloat(document.getElementById("ald").value) ? parseFloat(document.getElementById("ald").value) : 0;
+    const fac = parseFloat(document.getElementById("fac").value) ? parseFloat(document.getElementById("fac").value) : 0;
+
+    try {
+        const {rld} = calcular4(ald, fac);
+			colocarNoHistorico(rld);
+			
+            document.getElementById("rld").value = rld;
+
+    } catch (e) {
+        console.error(e);
+    };
+};
+
+function calcular4(ald, fac) {
+
+    const rld = ald * fac;
+
+    return {
+        rld
+	}
+
+}
+
+function calculardaacn() {
+    const mtow = parseFloat(document.getElementById("mtow").value) ? parseFloat(document.getElementById("mtow").value) : 0;
+    const agw  = parseFloat(document.getElementById("agw").value) ? parseFloat(document.getElementById("agw").value) : 0;
+    const dow  = parseFloat(document.getElementById("dow").value) ? parseFloat(document.getElementById("dow").value) : 0;
+    const hacn = parseFloat(document.getElementById("hacn").value) ? parseFloat(document.getElementById("hacn").value) : 0;
+    const aacn = parseFloat(document.getElementById("aacn").value) ? parseFloat(document.getElementById("aacn").value) : 0;
+    const lacn = parseFloat(document.getElementById("lacn").value) ? parseFloat(document.getElementById("lacn").value) : 0;
+
+    try {
+        const {acnf} = calcular3(mtow, agw, dow, hacn, aacn, lacn);
+			colocarNoHistorico(acnf);
+			
+            document.getElementById("aacn").value = acnf;
+
+    } catch (e) {
+        console.error(e);
+    };
+};
+
+function calcular3(mtow, agw, dow, hacn, aacn, lacn) {
+
+    const acnf = hacn - (((mtow - agw) / (mtow - dow)) *  (hacn - lacn));
+
+    return {
+        acnf
+	}
+
+}
+
+function limpaacn() {
+	document.getElementById("mtow").value='';
+	document.getElementById("agw").value='';
+	document.getElementById("dow").value='';
+	document.getElementById("hacn").value='';
+	document.getElementById("aacn").value='';
+	document.getElementById("lacn").value='';
+};
+
+function calcularlerp() {
+
+    const xl = parseFloat(document.getElementById("xl").value) ? parseFloat(document.getElementById("xl").value) : 0;
+    const fx = parseFloat(document.getElementById("fx").value) ? parseFloat(document.getElementById("fx").value) : 0;
+    const xh = parseFloat(document.getElementById("xh").value) ? parseFloat(document.getElementById("xh").value) : 0;
+    const fl = parseFloat(document.getElementById("fl").value) ? parseFloat(document.getElementById("fl").value) : 0;
+    const fh = parseFloat(document.getElementById("fh").value) ? parseFloat(document.getElementById("fh").value) : 0;
+
+
+    try {
+        const {lerp} = calcular2(xl, fx, xh, fl, fh);
+			colocarNoHistorico(lerp);
+			
+            document.getElementById("fr").value = lerp;
+
+    } catch (e) {
+        console.error(e);
+    };
+};
+
+function calcular2(xl, fx, xh, fl, fh) {
+
+    const lerp = ((fx - xl) * (fh - fl) / (xh - xl)) + fl;
+
+    return {
+        lerp
+	}
+
+}
+
+function limpalerp() {
+	document.getElementById("fx").value='';
+	document.getElementById("fr").value='';
+	document.getElementById("xl").value='';
+	document.getElementById("xh").value='';
+	document.getElementById("fl").value='';
+	document.getElementById("fh").value='';
+};
+
+function calculardlerp() {
+
+    const b1 = parseFloat(document.getElementById("b1").value) ? parseFloat(document.getElementById("b1").value) : 0;
+    const c1 = parseFloat(document.getElementById("c1").value) ? parseFloat(document.getElementById("c1").value) : 0;
+    const d1 = parseFloat(document.getElementById("d1").value) ? parseFloat(document.getElementById("d1").value) : 0;
+    const a2 = parseFloat(document.getElementById("a2").value) ? parseFloat(document.getElementById("a2").value) : 0;
+    const b2 = parseFloat(document.getElementById("b2").value) ? parseFloat(document.getElementById("b2").value) : 0;
+    const d2 = parseFloat(document.getElementById("d2").value) ? parseFloat(document.getElementById("d2").value) : 0;
+    const a3 = parseFloat(document.getElementById("a3").value) ? parseFloat(document.getElementById("a3").value) : 0;
+    const b3 = parseFloat(document.getElementById("b3").value) ? parseFloat(document.getElementById("b3").value) : 0;
+    const d3 = parseFloat(document.getElementById("d3").value) ? parseFloat(document.getElementById("d3").value) : 0;
+    const a4 = parseFloat(document.getElementById("a4").value) ? parseFloat(document.getElementById("a4").value) : 0;
+    const d4 = parseFloat(document.getElementById("d4").value) ? parseFloat(document.getElementById("d4").value) : 0;
+    const b4 = parseFloat(document.getElementById("b4").value) ? parseFloat(document.getElementById("b4").value) : 0;
+    const c2 = parseFloat(document.getElementById("c2").value) ? parseFloat(document.getElementById("c2").value) : 0;
+
+
+    try {
+        const { lerp1, lerp2, dlerp} = calcular1(b1, c1, d1, a2, b2, d2, a3, a4, b4, d4, c2);
+			colocarNoHistorico(dlerp);
+			
+            document.getElementById("c2").value = lerp1;
+            document.getElementById("c4").value = lerp2;
+            document.getElementById("c3").value = dlerp;
+
+    } catch (e) {
+        console.error(e);
+    };
+};
+
+function calcular1(b1, c1, d1, a2, b2, d2, a3, a4, b4, d4, c2) {
+    const lerp1 = ((c1 - b1) * (d2 - b2) / (d1 - b1)) + b2;
+    const lerp2 = ((c1 - b1) * (d4 - b4) / (d1 - b1)) + b4;
+    const dlerp = ((a3 - a2) * (lerp2 - lerp1) / (a4 - a2)) + lerp1;
+
+    return {
+        lerp1,
+        lerp2,
+        dlerp
+    };
+};
+
+function limpadlerp() {
+	document.getElementById("b1").value='';
+	document.getElementById("c1").value='';
+	document.getElementById("d1").value='';
+	document.getElementById("a2").value='';
+	document.getElementById("b2").value='';
+	document.getElementById("c2").value='';
+	document.getElementById("d2").value='';
+	document.getElementById("a3").value='';
+	document.getElementById("b3").value='';
+	document.getElementById("c3").value='';
+	document.getElementById("d3").value='';
+	document.getElementById("a4").value='';
+	document.getElementById("c4").value='';
+	document.getElementById("b4").value='';
+	document.getElementById("d4").value='';
+};
+</script>
+</body>
+</html>
