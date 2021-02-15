@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<title>ATP Calculator</title>
+<style>
+	html, body {
+		height: 100%;
+	}
+	
+	body {
+		margin: 0px;
+		padding: 0px;
+		background: #333333;
+		font-family: 'Muli', sans-serif;
+		font-size: 12pt;
+		font-weight: 300;
+		color: #363636;
+	}
+	
+	h1, h2, h3 {
+		margin: 0;
+		padding: 0;
+	}
+	
+	p, ol, ul {
+		margin-top: 0px;
+	}
+	
+	p {
+		line-height: 190%;
+	}
+	
+	strong {
+	}
+	
+	a {
+		color: #171717;
+	}
+	
+	a:hover {
+		text-decoration: none;
+	}
+	
+	a img {
+		border: none;
+	}
+	
+	/*********************************************************************************/
+	/* List Styles                                                                   */
+	/*********************************************************************************/
+	
+		ul.style1
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		ul.style1 li
+		{
+			border-top: solid 1px #E5E5E5;
+			padding: 0.80em 0;
+		}
+		
+		ul.style1 li:first-child
+		{
+			border-top: 0;
+			padding-top: 0;
+		}
+	
+		ul.style2
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		ul.style2 li
+		{
+			border-top: solid 1px #E5E5E5;
+			padding: 0.80em 0;
+		}
+		
+		ul.style2 li:first-child
+		{
+			border-top: 0;
+			padding-top: 0;
+		}
+	
+	/*********************************************************************************/
+	/* Heading Titles                                                                */
+	/*********************************************************************************/
+	
+		.title
+		{
+			margin-bottom: 2em;
+		}
+	
+		.primary
+		{
+			color: #2a4982;
+			padding-bottom: 15px;
+		}
+	
+		
+		.title .byline
+		{
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 0.90em;
+			color: #6F6F6F;
+		}
+	
+	/** WRAPPER */
+	
+	#wrapper {
+		background: #FFFFFF;
+	}
+	
+	#footer-wrapper
+	{
+		background: #212529;
+	}
+	
+	.container {
+		width: 60%;
+		margin: 0px auto;
+	}
+	
+	.clearfix {
+		clear: both;
+	}
+	
+	/*********************************************************************************/
+	/* Wrappers                                                                      */
+	/*********************************************************************************/
+	
+	#header-wrapper
+	{
+		overflow: hidden;
+		background-size: 100%;
+		background: #333333;
+	}
+	
+	
+	/*********************************************************************************/
+	/* Header                                                                        */
+	/*********************************************************************************/
+	
+		#header 
+		{
+			position: relative;
+			overflow: hidden;
+			text-align: center;
+		}
+	
+	/*********************************************************************************/
+	/* Logo                                                                          */
+	/*********************************************************************************/
+	
+		#logo 
+		{
+			width: 500px;
+			height: 100px;
+			margin: 0 auto;
+			padding: 2em 0em;
+			text-transform: uppercase;
+		}
+		
+		#logo h1
+		{
+			letter-spacing: 0.10em;
+			font-size: 3em;
+		}
+		
+		#logo p 
+		{
+			letter-spacing: 0.10em;
+			color: #FFF;
+		}
+		
+		#logo a 
+		{
+			text-decoration: none;
+			color: #FFF;
+		}
+	
+	/** MENU */
+	
+	#menu-wrapper
+	{
+		background: rgba(42, 73, 130, 1);
+	}
+	
+	#menu {
+		overflow: hidden;
+		height: 100px;
+	}
+	
+	#menu ul {
+		margin: 0;
+		padding: 25px 0px 0px 0px;
+		list-style: none;
+		line-height: normal;
+		text-align: center;
+	}
+	
+	#menu li {
+		display: inline-block;
+	}
+	
+	#menu a {
+		display: block;
+		letter-spacing: 1px;
+		padding: 20px 40px;
+		text-decoration: none;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 0.80em;
+		font-weight: 600;
+		border: none;
+		color: #FFF;
+	}
+	
+	#menu a:hover, #menu .current_page_item a {
+		text-decoration: none;
+	}
+	
+	#menu .current_page_item a {
+		background: rgba(0, 0, 0, 0.075);
+	}
+	
+	/** PAGE */
+	.containerpage {
+		width: 60%;
+		margin: 0px auto;
+		background: #FFFFFF;
+	}
+	
+	@media only screen and (max-width: 1400px) {
+		.containerpage {
+			width: 90%;
+			background: #FFFFFF;
+		}
+	}
+	
+	#page
+	{
+		position: relative;
+		overflow: hidden;
+		padding: 4em 0em 4em 4em;
+	}
+	
+	/** CONTENT */
+	
+	#content
+	{
+		float: left;
+		width: 65%;
+	}
+	
+	/*********************************************************************************/
+	/* Sidebar                                                                       */
+	/*********************************************************************************/
+	
+		#sidebar
+		{
+			float: right;
+			width: 35%;
+		}
+		
+		#sidebar .title h2
+		{
+			font-size: 1.6em;
+		}
+		
+		#sidebar .box1
+		{
+			margin-bottom: 3em;
+		}
+	
+	/*********************************************************************************/
+	/* Copyright                                                                     */
+	/*********************************************************************************/
+	
+		#copyright
+		{
+			overflow: hidden;
+			padding: 3em 0em;
+			text-align: center;
+		}
+		
+		#copyright p
+		{
+			letter-spacing: 0.20em;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 0.80em;
+			color: #6F6F6F;
+		}
+		
+		#copyright a
+		{
+			text-decoration: none;
+			color: #8C8C8C;
+		}
+	
+	/*********************************************************************************/
+	/* Button Style                                                                  */
+	/*********************************************************************************/
+		.btn
+		{
+			display:inline-block;
+			font-weight:400;
+			color:#212529;
+			text-align:center;
+			vertical-align:middle;
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+			background-color:transparent;
+			border:1px solid transparent;
+			padding:.375rem .75rem;
+			font-size:1rem;
+			line-height:1.5;
+			border-radius:.25rem;
+			transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+		}
+	
+		.btn-success
+		{
+			color:#fff;
+			background-color:#28a745;
+			border-color:#28a745
+		}
+	
+		.btn-success:hover
+		{
+			color:#fff;
+			background-color:#218838;
+			border-color:#1e7e34
+		}
+	
+		.btn-success.focus,.btn-success:focus
+		{
+			color:#fff;
+			background-color:#218838;
+			border-color:#1e7e34;
+			box-shadow:0 0 0 .2rem rgba(72,180,97,.5)
+		}
+	
+		.btn-danger
+		{
+			color:#fff;
+			background-color:#dc3545;
+			border-color:#dc3545
+		}
+	
+		.btn-danger:hover
+		{
+			color:#fff;
+			background-color:#c82333;
+			border-color:#bd2130
+		}
+	
+		.btn-danger.focus,.btn-danger:focus
+		{
+			color:#fff;
+			background-color:#c82333;
+			border-color:#bd2130;
+			box-shadow:0 0 0 .2rem rgba(225,83,97,.5)
+		}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="#">ATP&nbsp;Calculator</a></h1>
+				<p>Designed specifically for <a href="https://ivao.aero/" rel="nofollow">IVAO's</a> ATP exam</p>
+			</div>
+		</div>
+	</div>
+	<div id="menu-wrapper">
+		<div id="menu" class="container">
+			<ul>
+				<li><abbr title="linear interpolation"><a href="index.html#lerp">LERP</a><abbr/></li>
+				<li><a href="index.html#acn">ACN</a></li>
+				<li><a href="index.html#rld">RLD</a></li>
+				<li><abbr title="Flight Computer"><a href="https://e6bx.com/e6b/" target="_blank" rel="no follow">E6B</a></abbr></li>
+			</ul>
+		</div>
+		<!-- end #menu --> 
+	</div>
+	<div id="page" class="containerpage">
+		<div id="content">
+		<p>This section is to clarify some thing about this tool.</p>
+			<div class="title">
+				<h2 class="primary" id="lerp">► What is the tool's purpose?</h2>
+				<p>This tool helps you perform rapidly linear interpolation/extrapolation to save time when performing a full flight calculation usually required on IVAO's ATP part 1 exam.</p>
+			</div>
+			<div class="title">
+				<h2 class="primary" id="lerp">► How do I use it?</h2>
+				<p>The calculation method varies on the plane's type. About the tool handling, it's pretty easy and intuitive. Some examples are available in the images below.</p>
+
+			<img src="https://cdn.discordapp.com/attachments/737874222277197864/810136386459664434/bilinear.png" style="width:120%;"></img>
+			<div style="width:120%;">
+			<img src="https://cdn.discordapp.com/attachments/737874222277197864/810141814606528543/linear.png" style="width:49%;"></img><img src="https://cdn.discordapp.com/attachments/737874222277197864/810147952399876106/ALDandACN.png" style="width:49%;"></img>
+			</div>
+			</div>
+			<div class="title">
+				<h2 class="primary" id="lerp">► Can it be considered cheating?</h2>
+				<p>Definitely not as it's <b>a calculator</b>, by the way, you can use <u>any tool</u> as far as you know to do it properly and hand well the aircraft documentation.</p>
+			</div>
+			<div class="title">
+				<h2 class="primary" id="lerp">► Is this an official IVAO tool?</h2>
+				<p>No, it isn't, but you can use it at your own risk as a <u>strategic tool</u> for time management on your calculations.</p>
+			</div>
+			<div class="title">
+				<h2 class="primary" id="lerp">► How is the ATP exam?</h2>
+				<p>Unlike other pilot exams, the ATP exam doesn't have standards at all. However, in part one, English assessment, full flight calculation using only plane's manual, flight instruments, plane's normal/abnormal procedures, and some regulations is usually asked.</p>
+			</div>
+			<div class="title">
+				<h2 class="primary" id="lerp">► How much knowledge needed for the ATP p1?</h2>
+				<p>Pretty deep on aircraft manuals <b>structure</b>, knowing where everything is on the manuals is essential. A tip for Boeing's choice for evaluation is to take a profound look at the FCOM volume 1 plus 2 and FCTM <b>structure</b>,  but not limited to these two (or three) as any aeronautical subject can be discussed extensively.</p>
+			</div>
+			<div class="title">
+				<h2 class="primary" id="lerp">► I have some suggestions, what do I do?</h2>
+				<p>You can contact me on the discord server or send me an e-mail: <a href="mailto:sim.natan.halberstadt@gmail.com">sim.natan.halberstadt@gmail.com</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="copyright" class="container">
+	<p>Developed by Natan Halberstadt Fonseca - <a href="https://www.ivao.aero/Member.aspx?ID=496402">496402</a>  | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>
